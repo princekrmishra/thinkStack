@@ -10,9 +10,19 @@ import {
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export function AppSidebar() {
   const {theme, setTheme} = useTheme()
+  const [mounted, setMounted] = useState(false)
+  //for SSR rendering
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // ⛔ Prevent SSR/CSR mismatch
+  if (!mounted) return null;
+
   return (
     <Sidebar>
       <SidebarHeader />
