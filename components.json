@@ -11,7 +11,10 @@
     "prefix": ""
   },
   "iconLibrary": "lucide",
+<<<<<<< HEAD
   "rtl": false,
+=======
+>>>>>>> origin/main
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",

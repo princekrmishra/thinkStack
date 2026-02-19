@@ -1,7 +1,11 @@
 "use client"
 
 import * as React from "react"
+<<<<<<< HEAD
 import { ScrollArea as ScrollAreaPrimitive } from "radix-ui"
+=======
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 

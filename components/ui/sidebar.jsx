@@ -1,8 +1,14 @@
 "use client";
 import * as React from "react"
+<<<<<<< HEAD
 import { cva } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react"
 import { Slot } from "radix-ui"
+=======
+import { Slot } from "@radix-ui/react-slot"
+import { cva } from "class-variance-authority";
+import { PanelLeftIcon } from "lucide-react"
+>>>>>>> origin/main
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -375,7 +381,11 @@ function SidebarGroupLabel({
   asChild = false,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "div"
+=======
+  const Comp = asChild ? Slot : "div"
+>>>>>>> origin/main
 
   return (
     <Comp
@@ -395,7 +405,11 @@ function SidebarGroupAction({
   asChild = false,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "button"
+=======
+  const Comp = asChild ? Slot : "button"
+>>>>>>> origin/main
 
   return (
     <Comp
@@ -482,7 +496,11 @@ function SidebarMenuButton({
   className,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "button"
+=======
+  const Comp = asChild ? Slot : "button"
+>>>>>>> origin/main
   const { isMobile, state } = useSidebar()
 
   const button = (
@@ -523,7 +541,11 @@ function SidebarMenuAction({
   showOnHover = false,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "button"
+=======
+  const Comp = asChild ? Slot : "button"
+>>>>>>> origin/main
 
   return (
     <Comp
@@ -634,7 +656,11 @@ function SidebarMenuSubButton({
   className,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "a"
+=======
+  const Comp = asChild ? Slot : "a"
+>>>>>>> origin/main
 
   return (
     <Comp

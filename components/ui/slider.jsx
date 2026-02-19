@@ -1,7 +1,11 @@
 "use client"
 
 import * as React from "react"
+<<<<<<< HEAD
 import { Slider as SliderPrimitive } from "radix-ui"
+=======
+import * as SliderPrimitive from "@radix-ui/react-slider"
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 

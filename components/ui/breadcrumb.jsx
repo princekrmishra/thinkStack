@@ -1,6 +1,11 @@
 import * as React from "react"
+<<<<<<< HEAD
 import { ChevronRight, MoreHorizontal } from "lucide-react"
 import { Slot } from "radix-ui"
+=======
+import { Slot } from "@radix-ui/react-slot"
+import { ChevronRight, MoreHorizontal } from "lucide-react"
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 
@@ -42,7 +47,11 @@ function BreadcrumbLink({
   className,
   ...props
 }) {
+<<<<<<< HEAD
   const Comp = asChild ? Slot.Root : "a"
+=======
+  const Comp = asChild ? Slot : "a"
+>>>>>>> origin/main
 
   return (
     <Comp

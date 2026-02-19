@@ -1,7 +1,11 @@
 "use client"
 
 import * as React from "react"
+<<<<<<< HEAD
 import { Popover as PopoverPrimitive } from "radix-ui"
+=======
+import * as PopoverPrimitive from "@radix-ui/react-popover"
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 
@@ -44,6 +48,7 @@ function PopoverAnchor({
   return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />;
 }
 
+<<<<<<< HEAD
 function PopoverHeader({
   className,
   ...props
@@ -89,3 +94,6 @@ export {
   PopoverTitle,
   PopoverDescription,
 }
+=======
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }
+>>>>>>> origin/main

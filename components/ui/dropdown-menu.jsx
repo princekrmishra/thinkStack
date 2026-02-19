@@ -1,8 +1,13 @@
 "use client"
 
 import * as React from "react"
+<<<<<<< HEAD
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
+=======
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 

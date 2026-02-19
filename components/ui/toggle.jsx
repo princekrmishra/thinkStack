@@ -1,8 +1,13 @@
 "use client"
 
 import * as React from "react"
+<<<<<<< HEAD
 import { cva } from "class-variance-authority";
 import { Toggle as TogglePrimitive } from "radix-ui"
+=======
+import * as TogglePrimitive from "@radix-ui/react-toggle"
+import { cva } from "class-variance-authority";
+>>>>>>> origin/main
 
 import { cn } from "@/lib/utils"
 
