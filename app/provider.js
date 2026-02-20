@@ -17,6 +17,9 @@ function Provider({
     const {user} = useUser();
     const [aISelectedModels, setAISelectedModels] = useState(DefaultModel);
     const [userDetail, setUserDetail] = useState();
+    const [messages, setMessages] = useState({});
+    const [isInitialized, setIsInitialized] = useState(false);
+    const [lastSaved, setLastSaved] = useState(null);
 
     useEffect(() => {
   if (!user) return;
@@ -31,8 +34,9 @@ function Provider({
     const prefData = await prefRes.json();
 
     if (prefData.preferences) {
-      setAISelectedModels(prefData.preferences);
-    }
+  setAISelectedModels(prefData.preferences);
+}
+setIsInitialized(true);
 
     // 3️⃣ Load user details
     const userRes = await fetch("/api/users");
@@ -67,6 +71,32 @@ const createUserInDB = async () => {
   }
 };
 
+useEffect(() => {
+  if (!user || !isInitialized) return;
+
+  const serialized = JSON.stringify(aISelectedModels);
+
+  if (serialized === lastSaved) return;
+
+  const savePreferences = async () => {
+    try {
+      await fetch("/api/preferences", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          preferences: aISelectedModels,
+        }),
+      });
+
+      setLastSaved(serialized);
+    } catch (error) {
+      console.error("Save preferences error:", error);
+    }
+  };
+
+  savePreferences();
+}, [aISelectedModels, isInitialized]);
+
 
   return (
     <NextThemesProvider {...props}
@@ -75,7 +105,7 @@ const createUserInDB = async () => {
         enableSystem
         disableTransitionOnChange>
             <UserDetailContext.Provider value={{userDetail, setUserDetail}}>
-            <AISelectedModelContext.Provider value={{aISelectedModels, setAISelectedModels}}>
+            <AISelectedModelContext.Provider value={{aISelectedModels, setAISelectedModels, messages, setMessages}}>
             <SidebarProvider>
                 <AppSidebar />
                 <div className='w-full'>
