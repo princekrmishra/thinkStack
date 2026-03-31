@@ -1,9 +1,5 @@
-import { ChatInterface } from "@/components/chat/ChatInterface";
+import { redirect } from "next/navigation";
 
-export default function ChatPage({
-  params,
-}: {
-  params: { chatId: string };
-}) {
-  return <ChatInterface initialChatId={params.chatId} />;
+export default function DashboardPage() {
+  redirect("/chat");
 }
