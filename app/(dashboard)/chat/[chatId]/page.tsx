@@ -1,9 +1,11 @@
 import { ChatInterface } from "@/components/chat/ChatInterface";
 
-export default function ChatPage({
+export default async function ChatPage({
   params,
 }: {
-  params: { chatId: string };
+  params: Promise<{ chatId: string }>; // ← params is a Promise
 }) {
-  return <ChatInterface initialChatId={params.chatId} />;
+  const { chatId } = await params; // ← await params
+
+  return <ChatInterface initialChatId={chatId} />;
 }
